@@ -47,7 +47,8 @@ Ahora deberíamos tener Sass instalado, pero nunca esta de más una pequeña ver
 Te debe devolver algo parecido a este mensaje :
 
       Sass 3.4.20 (Selective Steve)
-      ¡Felicidades! Usted ha instalado con éxito Sass.
+      
+¡Felicidades! Usted ha instalado con éxito Sass.
       
 ¿Eres nuevo en Sass? 
 No te te procupes, aprender bastante rápido.
