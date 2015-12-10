@@ -87,9 +87,8 @@ las variables puede almacenar cosas como colores ,fuente o cualquier valor CSS q
 Sass usa el símbolo $ para las variables, a continuación un ejemplo :
 #### 6.1 Ejemplo
 
-*   $fuente:    Helvetica, sans-serif
-*   $rojo: #FF0000
-
+      $fuente:    Helvetica, sans-serif
+      $rojo: #FF0000
       body
             font: 100% $fuente
             color: $rojo
@@ -99,10 +98,10 @@ Esto puede ser muy útil cuando se trabaja con los colores de una marca y los ma
 
 CSS Generado
 
-*       body {
-*         font: 100% Helvetica, sans-serif;
-*         color: #FF0000;
-*       }
+      body {
+            font: 100% Helvetica, sans-serif;
+            color: #FF0000;
+      }
 
 ### 8. Nesting (Anidamiento)
 #### 8.1 ¿Que es Anidamiento?
@@ -113,7 +112,7 @@ En general se considera una mala práctica crear reglas excesivamente anidadas, 
 
 Un ejemplo
 
-       nav
+      nav
          ul
            margin: 0
            padding: 0
@@ -125,8 +124,11 @@ Un ejemplo
            padding: 6px 12px
            text-decoration: none
 
+los ul , li , y a  se anidan en el interior del selector de navegación .
+Para organizar tu CSS y hacerlo más legible no veo otra forma mejor. 
+Al generar el CSS obtendrás algo como esto:
 
-You'll notice that the ul, li, and a selectors are nested inside the nav selector. This is a great way to organize your CSS and make it more readable. When you generate the CSS you'll get something like this:
+CSS Generado
 
        nav ul {
          margin: 0;
@@ -143,6 +145,7 @@ You'll notice that the ul, li, and a selectors are nested inside the nav selecto
        }
 
 ### 9. Partials
+
 #### 9.1 Fragmentación de código
 Se pueden crear archivos parcialesque contienen pequeños fragmentos de CSS que se pueden incluir en otros archivos Sass.
 #### 9.2 CSS modularizado.
