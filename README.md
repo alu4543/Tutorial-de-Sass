@@ -1,7 +1,7 @@
 # Sistemas y Tecnologías Web
 ## Tutorial de Sass
 ### 1 introducción
-Sass acrónimo de (Syntactically Awesome StyleSheets)
+- Sass acrónimo de (Syntactically Awesome StyleSheets)
 Es un preprocesador de CSS que añade características muy potentes y elegantes.
 Sass incluye las siguientes características:
 * 100% compatible con CSS3.
@@ -11,22 +11,20 @@ Sass incluye las siguientes características:
 * Genera archivos CSS bien formateados y permite configurar su formato.
 
 
-  ![media](media/media1.png)
-
 ### 2 Pre-instalación
-Para usar Sass es necesario tener instalado Ruby. La instalación es un proceso bastante sencillo.
+- Para usar Sass es necesario tener instalado Ruby. La instalación es un proceso bastante sencillo.
 
 ####.2.1 Linux
-Si estás usando una distribución de Linux, Puedes instalar Rubi a través del gestor de paquetes apt , rbenv o RVM .
+- Si estás usando una distribución de Linux, Puedes instalar Rubi a través del gestor de paquetes apt , rbenv o RVM .
 
-      $ sudo apt-get install ruby-full rubygems1.8
+*      $ sudo apt-get install ruby-full rubygems1.8
 
 ####.2.2 Windows
-La manera más sencilla de instalar Rubi en  Windows es utilizar **[Ruby Installer.](http://rubyinstaller.org )**  
+- La manera más sencilla de instalar Rubi en  Windows es utilizar **[Ruby Installer.](http://rubyinstaller.org )**  
 El programa de instalación también instalará Ruby command line powershel que le permitirá utilizar librarias de Ruby.
 
 ####.2.3 Mac
-¡Felicidades!
+-- ¡Felicidades!
 Ruby viene pre-instalado.
 
 ### 3. instalación de Sass
@@ -34,7 +32,7 @@ Aquí está la forma más sencilla para empezar a utilizar Sass mediante el uso 
 Rubí utiliza gemas para gestionar sus diversos paquetes de código como Sass.
 #### 3.1 Comandos para la instalación
 
-      $ gem install sass
+*      $ gem install sass
 
 Es bastante mágico, este comando instalará Sass y las dependencias necesarias. 
 Si recibe un mensaje de error, entonces es probable que usted tendrá que utilizar el comando sudo para instalar la gema Sass . Se vería así :
@@ -53,26 +51,26 @@ Te debe devolver algo parecido a este mensaje :
 No te te procupes, aprender bastante rápido.
 
 ### 4. Complación
-El codigo escrito en Sass se compila mas adelante para obtener el codigo CSS para que los navegadores lo puedan leer.
+- El codigo escrito en Sass se compila mas adelante para obtener el codigo CSS para que los navegadores lo puedan leer.
 
 #### 4.1 Desde consola
-Para ejecutar Sass desde la línea de comandos, sólo tiene que ejecutar:
+- Para ejecutar Sass desde la línea de comandos, sólo tiene que ejecutar:
 
       $ sass main.sass style.css
 
 #### 4.2 Vigilar (Watch)
-También puede decirle a Sass que vegile el archivo Sass y actualizar el CSS cada vez que el archivo Sass cambie :
+- También puede decirle a Sass que vegile el archivo Sass y actualizar el CSS cada vez que el archivo Sass cambie :
 
       $ sass --watch main.sass:style.css
       
 #### 4.3 Vigilar un directorio
-Pero si usted tienes un directorio con muchos archivos Sass, también puede decirle Sass para ver todo el directorio :
+- Pero si usted tienes un directorio con muchos archivos Sass, también puede decirle Sass para ver todo el directorio :
 
       $ sass --watch app/sass:public/stylesheets
 
 ### 5 Conversión y compatibilidad de sintaxis
-Una de las ventajas de Sass es que los archivos creados con una sintaxis pueden importar cualquier archivo creado con la otra sintaxis.
-Además, disponemos de una utilidad para la línea de comandos que te permite convertir una sintaxis en otra:
+- Una de las ventajas de Sass es que los archivos creados con una sintaxis pueden importar cualquier archivo creado con la otra sintaxis.
+- Además, disponemos de una utilidad para la línea de comandos que te permite convertir una sintaxis en otra:
 
 #### 5.1 Convierte un archivo Sass en SCSS
 
@@ -83,70 +81,70 @@ Además, disponemos de una utilidad para la línea de comandos que te permite co
       $ sass-convert estilos.scss estilos.sass
 
 ### 6. Variables
-las variables puede almacenar cosas como colores ,fuente o cualquier valor CSS que querremos ruetilizar a lo largo de la hoja de estilo.
-Sass usa el símbolo $ para las variables, a continuación un ejemplo :
+- las variables puede almacenar cosas como colores ,fuente o cualquier valor CSS que querremos ruetilizar a lo largo de la hoja de estilo.
+- Sass usa el símbolo $ para las variables, a continuación un ejemplo :
 #### 6.1 Ejemplo
 
-    $fuente:    Helvetica, sans-serif
-    $rojo: #FF0000
-    body
-      font: 100% $fuente
-      color: $rojo
+*   $fuente:    Helvetica, sans-serif
+*   $rojo: #FF0000
+*   body
+*     font: 100% $fuente
+*     color: $rojo
 
-Cuando se procesa el Sass ,toma las variables que definimos $fuente y $rojo y genera la salidas CSS con nuestros valores de las variables puestas en la CSS.
-Esto puede ser muy útil cuando se trabaja con los colores de una marca y los mantiene constante a través del sitio.
-#### 6.2 CSS Generado
+- Cuando se procesa el Sass ,toma las variables que definimos $fuente y $rojo y genera la salidas CSS con nuestros valores de las variables puestas en la CSS.
+- Esto puede ser muy útil cuando se trabaja con los colores de una marca y los mantiene constante a través del sitio.
 
-    body {
-      font: 100% Helvetica, sans-serif;
-      color: #FF0000;
-    }
+- CSS Generado
+
+*       body {
+*         font: 100% Helvetica, sans-serif;
+*         color: #FF0000;
+*       }
 
 ### 8. Nesting (Anidamiento)
 #### 8.1 ¿Que es Anidamiento?
-Notamos que al escribir HTML tiene una jerarquía anidada visual y clara . CSS, por otra parte, no lo hace .
-Sass le permitirá a CSS que siga la misma jerarquía visual de su HTML.
+-Notamos que al escribir HTML tiene una jerarquía anidada visual y clara . CSS, por otra parte, no lo hace .
+-Sass le permitirá a CSS que siga la misma jerarquía visual de su HTML.
 #### 8.2 Advertencia
-En general se considera una mala práctica crear reglas excesivamente anidadas, podría resultar difícil de mantener, 
-Con esto en mente, a continuación un ejemplo :
-#### 8.3 Ejemplos
-    nav
-      ul
-        margin: 0
-        padding: 0
-        list-style: none
-      li
-        display: inline-block
-      a
-        display: block
-        padding: 6px 12px
-        text-decoration: none
+-En general se considera una mala práctica crear reglas excesivamente anidadas, podría resultar difícil de mantener, con esto en mente, a continuación un ejemplo :
+- Ejemplos
+*       nav
+*         ul
+*           margin: 0
+*           padding: 0
+*           list-style: none
+*         li
+*           display: inline-block
+*         a
+*           display: block
+*           padding: 6px 12px
+*           text-decoration: none
 
 
-You'll notice that the ul, li, and a selectors are nested inside the nav selector. This is a great way to organize your CSS and make it more readable. When you generate the CSS you'll get something like this:
+- You'll notice that the ul, li, and a selectors are nested inside the nav selector. This is a great way to organize your CSS and make it more readable. When you generate the CSS you'll get something like this:
 
-    nav ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    nav li {
-      display: inline-block;
-    }
-    nav a {
-      display: block;
-      padding: 6px 12px;
-      text-decoration: none;
-    }
+*       nav ul {
+*         margin: 0;
+*         padding: 0;
+*         list-style: none;
+*       }
+*       nav li {
+*         display: inline-block;
+*       }
+*       nav a {
+*         display: block;
+*         padding: 6px 12px;
+*         text-decoration: none;
+*       }
 
 ### 9 Partials
 #### 9.1 Fragmentación de código
-Se pueden crear archivos parcialesque contienen pequeños fragmentos de CSS que se pueden incluir en otros archivos Sass.
+- Se pueden crear archivos parcialesque contienen pequeños fragmentos de CSS que se pueden incluir en otros archivos Sass.
 #### 9.2 CSS modularizado.
-Esta es una buena practica para modularizar el CSS y ayudar a mantener las cosas más fáciles de mantener.
+- Esta es una buena practica para modularizar el CSS y ayudar a mantener las cosas más fáciles de mantener.
 #### 9.3¿que es un parcial?
-Un parcial es simplemente un archivo Sass llamado con un subrayado inicial algo así como _partial.scss .
-El subrayado permite a Sass sabe que el archivo es un archivo solamente parcial y que no debe ser generado en un archivo CSS. Parciales Sass se utilizan con la directiva import .
+- Un parcial es simplemente un archivo Sass llamado con un subrayado inicial algo así como _partial.scss .
+- El subrayado permite a Sass sabe que el archivo es un archivo solamente parcial y que no debe ser generado en un archivo CSS. Los parciales Sass se utilizan con la directiva import .
 
 ### 10 Import
 CSS has an import option that lets you split your CSS into smaller, more maintainable portions. The only drawback is that each time you use @import in CSS it creates another HTTP request. Sass builds on top of the current CSS @import but instead of requiring an HTTP request, Sass will take the file that you want to import and combine it with the file you're importing into so you can serve a single CSS file to the web browser.
