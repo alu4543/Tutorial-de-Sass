@@ -89,9 +89,10 @@ Sass usa el símbolo $ para las variables, a continuación un ejemplo :
 
 *   $fuente:    Helvetica, sans-serif
 *   $rojo: #FF0000
-*   body
-*     font: 100% $fuente
-*     color: $rojo
+
+      body
+            font: 100% $fuente
+            color: $rojo
 
 Cuando se procesa el Sass ,toma las variables que definimos $fuente y $rojo y genera la salidas CSS con nuestros valores de las variables puestas en la CSS.
 Esto puede ser muy útil cuando se trabaja con los colores de una marca y los mantiene constante a través del sitio.
