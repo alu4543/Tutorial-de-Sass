@@ -223,8 +223,6 @@ Some things in CSS are a bit tedious to write, especially with CSS3 and the many
       +border-radius(10px)
   
 
-To create a mixin you use the @mixin directive and give it a name. We've named our mixin border-radius. We're also using the variable $radius inside the parentheses so we can pass in a radius of whatever we want. After you create your mixin, you can then use it as a CSS declaration starting with @include followed by the name of the mixin. When your CSS is generated it'll look like this:
-
 Para crear un mixin utiliza la directiva  @mixin y darle un nombre. 
 Hemos llamado a nuestra mixin border-radius .
 También estamos usando la variable $radiusdentro de los paréntesis para que podamos pasar en un radio de lo que queramos.
@@ -239,7 +237,10 @@ Cuando se genera el CSS que va a tener este aspecto
     }
     
 ### 12 Extend/Inheritance
-This is one of the most useful features of Sass. Using @extend lets you share a set of CSS properties from one selector to another. It helps keep your Sass very DRY. In our example we're going to create a simple series of messaging for errors, warnings and successes.
+
+Esta es una de las características más útiles de Sass . 
+Usando extend le permite compartir un conjunto de propiedades CSS de un selector a otro .
+En nuestro ejemplo vamos a crear una simple serie de mensajes de errores, advertencias y éxitos.
 
     .message
       border: 1px solid #ccc
