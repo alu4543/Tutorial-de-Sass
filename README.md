@@ -213,20 +213,21 @@ El código Sass anterior se compila de la siguiente manera:
 ### 11 Mixins
 Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. You can even pass in values to make your mixin more flexible. A good use of a mixin is for vendor prefixes. Here's an example for border-radius.
 
-    =border-radius($radius)
-      -webkit-border-radius: $radius
-      -moz-border-radius:    $radius
-      -ms-border-radius:     $radius
-      border-radius:         $radius
+    @mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+         -moz-border-radius: $radius;
+          -ms-border-radius: $radius;
+              border-radius: $radius;
+    }
       
-    .box
-      +border-radius(10px)
+    .box { @include border-radius(10px); }
   
 
 Para crear un mixin utiliza la directiva  @mixin y darle un nombre. 
 Hemos llamado a nuestra mixin border-radius .
-También estamos usando la variable $radiusdentro de los paréntesis para que podamos pasar en un radio de lo que queramos.
-Después de crear tu mixin , puede utilizarlo como una declaración CSS comenzando con @include seguido del nombre del mixin . 
+También estamos usando la variable ($radius) dentro de los paréntesis para que podamos pasar en un radio de lo que queramos.
+Después de crear nuestro mixin.
+Para utilizarlo como una declaración CSS comenzando con @include seguido del nombre del mixin . 
 Cuando se genera el CSS que va a tener este aspecto 
 
     .box {
@@ -240,7 +241,7 @@ Cuando se genera el CSS que va a tener este aspecto
 
 Esta es una de las características más útiles de Sass . 
 Usando extend le permite compartir un conjunto de propiedades CSS de un selector a otro .
-En nuestro ejemplo vamos a crear una simple serie de mensajes de errores, advertencias y éxitos.
+En nuestro ejemplo vamos a crear una simple serie de message de errores, advertencias y éxitos.
 
     .message
       border: 1px solid #ccc
