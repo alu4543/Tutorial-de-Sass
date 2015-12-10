@@ -195,13 +195,12 @@ Sass es inteligente y va a averiguarlo por ti. Al generar el CSS que obtendrá :
 Si no se da ninguna de las anteriores circunstancias, y la extensión del archivo importado es .scss o .sass, entonces se importan directamente los contenidos de ese archivo. Si no se indica la extensión, Sass tratará de buscar un archivo con ese nombre y con las extensiones .scss o .sass. Ejemplos:
 
 |      Regla @	               	| Resultado			            |
-|------------------------------     |-------------------------------    |
+|-----------------------------------|-----------------------------------|
 | @import "foo.scss";		      | Se importa el archivo foo.scss    |
 | @import "foo";		            | Se importa el archivo foo.scss    |
-| @import "foo.css";		      | @import "foo.css"; 		      |
-| @import "foo" screen;		      | @import "foo" screen; 	      |
-| @import "http://foo.com/bar";	| @import "http://foo.com/bar";     |
-| @import url(foo);		      | @import url(foo); 		      |
+| @import "foo.css";		      | Se importa el archivo foo.css     |
+| @import "http://foo.com/bar";	| Se importa http://foo.com/bar     |
+| @import url(foo);		      | Se importa lo que hay en la url   |
 
 
 También es posible importar varios archivos con una sola regla @import. Ejemplo:
@@ -295,7 +294,6 @@ El código Sass anterior se compila de la siguiente manera:
       }
 
 ### 12 Extend/Inheritance
-
 Esta es una de las características más útiles de Sass . 
 Usando extend le permite compartir un conjunto de propiedades CSS de un selector a otro .
 En nuestro ejemplo vamos a crear una simple serie de message de errores, advertencias y éxitos.
@@ -339,9 +337,11 @@ La magia sucede con el CSS generado, esto ayuda a evitar tener que escribir vari
     }
 
 
-### 13 Operators
+### 13 Operators
 Utilizar las matemáticas en CSS puede resultar muy útil. Sass tiene algunos operadores matemáticos estándar como +, - , *, / y% .
 En nuestro ejemplo vamos a hacer un poco de matemática simple para calcular anchos para un lado y artículo.
+
+#### 13.1. Ejemplo
 
     .container
       width: 100%
@@ -354,9 +354,9 @@ En nuestro ejemplo vamos a hacer un poco de matemática simple para calcular anc
       float: right
       width: 300px / 960px * 100%
 
-Hemos creado una rejills (grid) simple , basado en 960px .
-Las operaciones en Sass no deja hacer algo así como los valores de píxel y las convierten a porcentajes sin mucha molestia .
-El CSS generada se verá así :
+Hemos creado un grid simple , basado en 960px .
+Las operaciones en Sass nos deja hacer algo así como los valores de píxel y las convierten a porcentajes sin mucha molestia .
+#### 13.2. CSS Generado:
 
     .container {
       width: 100%;
@@ -371,6 +371,6 @@ El CSS generada se verá así :
       float: right;
       width: 31.25%;
     }
-
-
-
+    
+### 14 Bibliografía
+http://sass-lang.com/
