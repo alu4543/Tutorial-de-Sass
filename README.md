@@ -148,7 +148,7 @@ CSS Generado
 ### 9. Partials
 #### 9.1 ¿que es un parcial?
 Un parcial es simplemente un archivo Sass llamado con un subrayado inicial algo así como _partial.sass .
-El subrayado permite a Sass sabe que el archivo es un archivo solamente parcial y que no debe ser generado en un archivo CSS. Los parciales Sass se utilizan con la directiva import .
+El subrayado permite a Sass saber que el archivo es un archivo solamente parcial y que no debe ser generado en un archivo CSS. Los parciales Sass se utilizan con la directiva import .
 #### 9.2 ¿Para que sirve?
 ##### 9.2.1 Fragmentación de código
 Se pueden crear archivos parcialesque contienen pequeños fragmentos de CSS que se pueden incluir en otros archivos Sass.
