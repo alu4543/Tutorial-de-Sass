@@ -114,17 +114,17 @@ En general se considera una mala práctica crear reglas excesivamente anidadas, 
 - Ejemplo:
 
 
-      nav
-         ul
-           margin: 0
-           padding: 0
-           list-style: none
-         li
-           display: inline-block
-         a
-           display: block
-           padding: 6px 12px
-           text-decoration: none
+            nav
+               ul
+                 margin: 0
+                 padding: 0
+                 list-style: none
+               li
+                 display: inline-block
+               a
+                 display: block
+                 padding: 6px 12px
+                 text-decoration: none
 
 los ul , li , y a  se anidan en el interior del selector de navegación .
 Para organizar tu CSS y hacerlo más legible no veo otra forma mejor. 
@@ -132,19 +132,19 @@ Al generar el CSS obtendrás algo como esto:
 
 CSS Generado
 
-       nav ul {
-         margin: 0;
-         padding: 0;
-         list-style: none;
-       }
-       nav li {
-         display: inline-block;
-       }
-       nav a {
-         display: block;
-         padding: 6px 12px;
-         text-decoration: none;
-       }
+             nav ul {
+               margin: 0;
+               padding: 0;
+               list-style: none;
+             }
+             nav li {
+               display: inline-block;
+             }
+             nav a {
+               display: block;
+               padding: 6px 12px;
+               text-decoration: none;
+             }
 
 ### 9. Partials
 #### 9.1 ¿que es un parcial?
