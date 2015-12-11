@@ -1,7 +1,7 @@
 # Sistemas y Tecnologías Web
 ## Tutorial de Sass
 ### 1. introducción
-- Sass acrónimo de (Syntactically Awesome StyleSheets)
+Sass acrónimo de (Syntactically Awesome StyleSheets)
 Es un preprocesador de CSS que añade características muy potentes y elegantes.
 Sass incluye las siguientes características:
 * 100% compatible con CSS3.
@@ -111,7 +111,7 @@ Sass le permitirá a CSS que siga la misma jerarquía visual de su HTML.
 #### 8.2 Advertencia
 En general se considera una mala práctica crear reglas excesivamente anidadas, podría resultar difícil de mantener, con esto en mente, a continuación un ejemplo :
 
-Un ejemplo
+##### 8.2.2 Ejemplo
 
       nav
          ul
@@ -146,20 +146,24 @@ CSS Generado
        }
 
 ### 9. Partials
-
-#### 9.1 Fragmentación de código
+#### 9.1 ¿que es un parcial?
+Un parcial es simplemente un archivo Sass llamado con un subrayado inicial algo así como _partial.sass .
+El subrayado permite a Sass sabe que el archivo es un archivo solamente parcial y que no debe ser generado en un archivo CSS. Los parciales Sass se utilizan con la directiva import . 
+#### 9.2 ¿Para que sirve?
+##### 9.2.1 Fragmentación de código
 Se pueden crear archivos parcialesque contienen pequeños fragmentos de CSS que se pueden incluir en otros archivos Sass.
-#### 9.2 CSS modularizado.
+##### 9.2.3 CSS modularizado.
 Esta es una buena practica para modularizar el CSS y ayudar a mantener las cosas más fáciles de mantener.
-#### 9.3¿que es un parcial?
-Un parcial es simplemente un archivo Sass llamado con un subrayado inicial algo así como _partial.scss .
-El subrayado permite a Sass sabe que el archivo es un archivo solamente parcial y que no debe ser generado en un archivo CSS. Los parciales Sass se utilizan con la directiva import .
 
 ### 10. Import
-CSS has an import option that lets you split your CSS into smaller, more maintainable portions. The only drawback is that each time you use @import in CSS it creates another HTTP request. Sass builds on top of the current CSS @import but instead of requiring an HTTP request, Sass will take the file that you want to import and combine it with the file you're importing into so you can serve a single CSS file to the web browser.
-Let's say you have a couple of Sass files, _reset.scss and base.scss. We want to import _reset.scss into base.scss.
 
-#### 10.1 Ejemplos
+CSS tiene una opción de importación que le permite dividir su hoja de estilo en porciones más pequeñas y fáciles de mantener.
+El único inconveniente es que cada vez que se utilice @import en CSS crea otra petición HTTP .
+Sass construye en la parte superior de la CSS actual @import pero en lugar de construir una solicitud HTTP, Sass tomará el archivo que desea importar y combinarlo con el archivo que está importando para que pueda servir a un solo archivo CSS para el navegador web.
+
+Supongamos que tenemos un par de archivos Sass , _reset.scss , base.scss. y Queremos importar _reset.scss hacia base.scss.
+ 
+#### 10.1 Ejemplo
 
     // _reset.sass
     html,
@@ -168,20 +172,17 @@ Let's say you have a couple of Sass files, _reset.scss and base.scss. We want to
     ol
       margin:  0
       padding: 0
-      
-      
+
+
     // base.sass
     @import reset
     body
       font: 100% Helvetica, sans-serif
       background-color: #efefef
 
+Está usando import 'reset' en el archivo base.scss. y no es necesario indicarle la extención extensión .scss  de archivo, lo importa y incluye su contenido en la generación del CSS final.
 
-Nótese que estamos usando import 'reset' ; en el archivo base.scss . Al importar un archivo que no es necesario incluir el .scss extensión de archivo .
-Sass es inteligente y va a averiguarlo por ti. Al generar el CSS que obtendrá :
-
-
-#### 10.2 Ejemplos
+CSS Generado
 
     html, body, ul, ol {
       margin: 0;
@@ -191,40 +192,43 @@ Sass es inteligente y va a averiguarlo por ti. Al generar el CSS que obtendrá :
       font: 100% Helvetica, sans-serif;
       background-color: #efefef;
     }
+Sass es inteligente, si no se indica la extensión, Sass tratará de buscar un archivo con ese nombre y con las extensiones .scss o .sass.
 
-Si no se da ninguna de las anteriores circunstancias, y la extensión del archivo importado es .scss o .sass, entonces se importan directamente los contenidos de ese archivo. Si no se indica la extensión, Sass tratará de buscar un archivo con ese nombre y con las extensiones .scss o .sass. Ejemplos:
-
-|      Regla @	               	| Resultado			            |
-|-----------------------------------|-----------------------------------|
-| @import "foo.scss";		      | Se importa el archivo foo.scss    |
-| @import "foo";		            | Se importa el archivo foo.scss    |
-| @import "foo.css";		      | Se importa el archivo foo.css     |
-| @import "http://foo.com/bar";	| Se importa http://foo.com/bar     |
-| @import url(foo);		      | Se importa lo que hay en la url   |
+      |      Regla @	               	| Resultado			            |
+      |-----------------------------------|-----------------------------------|
+      | @import "foo.scss";		      | Se importa el archivo foo.scss    |
+      | @import "foo";		            | Se importa el archivo foo.scss    |
+      | @import "foo.css";		      | Se importa el archivo foo.css     |
+      | @import "http://foo.com/bar";	| Se importa http://foo.com/bar     |
+      | @import url(foo);		      | Se importa lo que hay en la url   |
 
 
 También es posible importar varios archivos con una sola regla @import. Ejemplo:
 
-@import "rounded-corners", "text-shadow";
+      @import "rounded-corners", "text-shadow";
+      
 Esta regla importaría tanto el archivo rounded-corners como el archivo text-shadow.
 
-El nombre del archivo importado también se puede establecer con la interpolación #{ }, pero con ciertas restricciones. No se puede importar dinámicamente un archivo Sass en base al nombre de una variable, pero sí que se puede importar de esta manera un archivo CSS. De forma que la interpolación solamente funciona en la práctica cuando se utiliza url(). Ejemplo:
+El nombre del archivo importado también se puede establecer con la interpolación #{ }, pero con ciertas restricciones.
+      No se puede importar dinámicamente un archivo Sass en base al nombre de una variable, pero sí que se puede importar de esta manera un archivo CSS.
+      De forma que la interpolación solamente funciona en la práctica cuando se utiliza url(). Ejemplo:
 
-$family: unquote("Droid+Sans");
-@import url("http://fonts.googleapis.com/css?family=#{$family}");
+      $family: unquote("Droid+Sans");
+      @import url("http://fonts.googleapis.com/css?family=#{$family}");
+      
 El código Sass anterior se compila de la siguiente manera:
 
-@import url("http://fonts.googleapis.com/css?family=Droid+Sans");
+      @import url("http://fonts.googleapis.com/css?family=Droid+Sans");
 
 ### 11 Mixins
 #### 11.1 Utilidad 
 Algunas cosas en CSS son un poco tedioso de escribir, especialmente con CSS3 y los muchos prefijos de los diferentes navegadores.
-Un mixin le permite hacer grupos de declaraciones CSS que puedo ruetilizar un todo el sitio.
-Incluso puede pasar en los valores para hacer su mixin más flexible. Un buen uso de un mixin es para prefijos de proveedores. He aquí un ejemplo de la frontera de radio .
+Un mixin permite hacer grupos de declaraciones CSS que puedo ruetilizar un todo el sitio.
 
 #### 11.2 Sintaxis
 Para crear un mixin utiliza la directiva  @mixin y darle un nombre. 
-Después de crear nuestro mixin podemos utilizarlo como una declaración CSS comenzando con @include seguido del nombre del mixin .
+Después de crear nuestro mixin podemos utilizarlo como una declaración CSS comenzando con @include seguido del nombre del mixin.
+Un buen uso de un mixin es para prefijos de proveedores.
 Veamos un ejemplo:
 
     @mixin border-radius($radius) {
@@ -236,7 +240,6 @@ Veamos un ejemplo:
       
     .box { @include border-radius(10px); }
   
-
 Cuando se genera el CSS que va a tener este aspecto 
 
     .box {
@@ -267,7 +270,7 @@ El código Sass anterior se compila de la siguiente manera:
         border-width: 1in;
         border-style: dashed;
       }
-
+##### 11.3.1 Argumentos con Valores por defecto
 Los mixins también pueden especificar valores por defecto para sus argumentos. De esta manera, si al llamar a un mixin no se pasa el valor de ese argumento, se utiliza en su lugar el valor por defecto. Ejemplo:
 
       @mixin mi-border($color, $width: 1in) {
@@ -277,8 +280,8 @@ Los mixins también pueden especificar valores por defecto para sus argumentos. 
           style: dashed;
         }
       }
-      p { @include sexy-border(blue); }
-      h1 { @include sexy-border(blue, 2in); }
+      p { @include mi-border(blue); }
+      h1 { @include mi-border(blue, 2in); }
 El código Sass anterior se compila de la siguiente manera:
 
       p {
@@ -293,7 +296,7 @@ El código Sass anterior se compila de la siguiente manera:
         border-style: dashed;
       }
 
-### 12 Extend/Inheritance
+### 12 Extend/Herencia
 Esta es una de las características más útiles de Sass . 
 Usando extend le permite compartir un conjunto de propiedades CSS de un selector a otro .
 En nuestro ejemplo vamos a crear una simple serie de message de errores, advertencias y éxitos.
@@ -337,7 +340,7 @@ La magia sucede con el CSS generado, esto ayuda a evitar tener que escribir vari
     }
 
 
-### 13 Operators
+### 13 Operadores
 Utilizar las matemáticas en CSS puede resultar muy útil. Sass tiene algunos operadores matemáticos estándar como +, - , *, / y% .
 En nuestro ejemplo vamos a hacer un poco de matemática simple para calcular anchos para un lado y artículo.
 
@@ -356,6 +359,7 @@ En nuestro ejemplo vamos a hacer un poco de matemática simple para calcular anc
 
 Hemos creado un grid simple , basado en 960px .
 Las operaciones en Sass nos deja hacer algo así como los valores de píxel y las convierten a porcentajes sin mucha molestia .
+
 #### 13.2. CSS Generado:
 
     .container {
