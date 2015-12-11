@@ -194,7 +194,7 @@ CSS Generado
     }
 Sass es inteligente, si no se indica la extensión, Sass tratará de buscar un archivo con ese nombre y con las extensiones .scss o .sass.
 
-      |      Regla @	               	| Resultado			            |
+      |      Regla @	               	| Resultado			              |
       |---------------------------------|-----------------------------------|
       | @import "foo.scss";		        | Se importa el archivo foo.scss    |
       | @import "foo";		            | Se importa el archivo foo.scss    |
