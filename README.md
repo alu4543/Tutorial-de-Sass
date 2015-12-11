@@ -296,7 +296,7 @@ El código Sass anterior se compila de la siguiente manera:
         border-style: dashed;
       }
 
-### 12 Extend/Herencia
+### 12. Extend/Herencia
 Esta es una de las características más útiles de Sass . 
 Usando extend le permite compartir un conjunto de propiedades CSS de un selector a otro .
 En nuestro ejemplo vamos a crear una simple serie de message de errores, advertencias y éxitos.
@@ -340,11 +340,11 @@ La magia sucede con el CSS generado, esto ayuda a evitar tener que escribir vari
     }
 
 
-### 13 Operadores
+### 13. Operadores
 Utilizar las matemáticas en CSS puede resultar muy útil. Sass tiene algunos operadores matemáticos estándar como +, - , *, / y% .
 En nuestro ejemplo vamos a hacer un poco de matemática simple para calcular anchos para un lado y artículo.
 
-#### 13.1. Ejemplo
+#### 13.1 Ejemplo
 
     .container
       width: 100%
@@ -360,7 +360,7 @@ En nuestro ejemplo vamos a hacer un poco de matemática simple para calcular anc
 Hemos creado un grid simple , basado en 960px .
 Las operaciones en Sass nos deja hacer algo así como los valores de píxel y las convierten a porcentajes sin mucha molestia .
 
-#### 13.2. CSS Generado:
+#### 13.2 CSS Generado:
 
     .container {
       width: 100%;
@@ -376,5 +376,5 @@ Las operaciones en Sass nos deja hacer algo así como los valores de píxel y la
       width: 31.25%;
     }
     
-### 14 Bibliografía
+### 14. Bibliografía
 http://sass-lang.com/
