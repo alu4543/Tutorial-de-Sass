@@ -164,8 +164,8 @@ Sass construye en la parte superior de la CSS actual @import pero en lugar de co
 Supongamos que tenemos un par de archivos Sass , _reset.scss , base.scss. y Queremos importar _reset.scss hacia base.scss.
 
 #### 10.1 Ejemplo
+// _reset.sass
 
-    // _reset.sass
     html,
     body,
     ul,
@@ -173,8 +173,8 @@ Supongamos que tenemos un par de archivos Sass , _reset.scss , base.scss. y Quer
       margin:  0
       padding: 0
 
+// base.sass
 
-    // base.sass
     @import reset
     body
       font: 100% Helvetica, sans-serif
