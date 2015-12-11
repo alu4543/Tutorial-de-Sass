@@ -153,7 +153,7 @@ El subrayado permite a Sass saber que el archivo es un archivo solamente parcial
 ##### 9.2.1 Fragmentación de código
 Se pueden crear archivos parciales que contienen pequeños fragmentos de CSS que se pueden incluir en otros archivos Sass.
 ##### 9.2.3 CSS modularizado.
-Esta es una buena practica para modularizar el CSS y ayudar a mantener las cosas más fáciles de mantener.
+Esta es una buena practica para modularizar el CSS y facilita que nuestras hojas de estilos séan más fáciles de mantener.
 
 ### 10. Import
 
