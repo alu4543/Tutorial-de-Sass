@@ -1,5 +1,5 @@
 # Sistemas y Tecnologías Web
-## Tutorial de Sass
+## Tutorial con ejemplos básicos de Sass
 ### 1. introducción
 Sass acrónimo de (Syntactically Awesome StyleSheets)
 Es un preprocesador de CSS que añade características muy potentes y elegantes.
