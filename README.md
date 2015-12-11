@@ -77,11 +77,11 @@ Además, disponemos de una utilidad para la línea de comandos que te permite co
 
 #### 5.1 Convierte un archivo Sass en SCSS
 
-      $ sass-convert estilos.sass estilos.scss
+      $ sass-convert main.sass main.scss
 
 #### 5.2 Convierte un archivo SCSS en Sass
 
-      $ sass-convert estilos.scss estilos.sass
+      $ sass-convert main.scss main.sass
 
 ### 6. Variables
 las variables puede almacenar cosas como colores ,fuente o cualquier valor CSS que querremos ruetilizar a lo largo de la hoja de estilo.
