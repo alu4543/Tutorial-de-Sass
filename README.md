@@ -377,7 +377,7 @@ Las operaciones en Sass nos deja hacer algo así como los valores de píxel y la
     }
  
 ### 14. Bibliografía
-**[sass Official site.](http://sass-lang.com/)**  
-**[librosweb.](https://librosweb.es/libro/sass/)**  
+**[Sass Official site.](http://sass-lang.com/)**  
+**[Librosweb.](https://librosweb.es/libro/sass/)**  
 
 
