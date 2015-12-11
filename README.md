@@ -166,20 +166,20 @@ Supongamos que tenemos un par de archivos Sass , _reset.scss , base.scss. y Quer
 - Ejemplo
 
 
-    // _reset.sass
-    html,
-    body,
-    ul,
-    ol
-      margin:  0
-      padding: 0
-
-
-    // base.sass
-    @import reset
-    body
-      font: 100% Helvetica, sans-serif
-      background-color: #efefef
+          // _reset.sass
+          html,
+          body,
+          ul,
+          ol
+            margin:  0
+            padding: 0
+      
+      
+          // base.sass
+          @import reset
+          body
+            font: 100% Helvetica, sans-serif
+            background-color: #efefef
 
 Está usando import 'reset' en el archivo base.scss. y no es necesario indicarle la extención extensión .scss  de archivo, lo importa y incluye su contenido en la generación del CSS final.
 
