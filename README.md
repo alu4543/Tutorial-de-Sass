@@ -378,3 +378,12 @@ Las operaciones en Sass nos deja hacer algo así como los valores de píxel y la
     
 ### 14. Bibliografía
 http://sass-lang.com/
+
+
+#### 15.Links de la práctica:
+* **[Despliegue](http://alu4543.github.io/Tutorial-de-Sass)**
+* **[GitHub](https://github.com/alu4543/Tutorial-de-Sass)**
+* **[web de la asignatura](http://alu4543.github.io/)**
+
+
+http://alu4543.github.io/Tutorial-de-Sass/
