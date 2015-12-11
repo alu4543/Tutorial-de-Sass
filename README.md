@@ -195,12 +195,12 @@ CSS Generado
 Sass es inteligente, si no se indica la extensión, Sass tratará de buscar un archivo con ese nombre y con las extensiones .scss o .sass.
 
       |      Regla @	               	| Resultado			            |
-      |--------------------------------|-----------------------------------|
-      | @import "foo.scss";		            | Se importa el archivo foo.scss    |
+      |---------------------------------|-----------------------------------|
+      | @import "foo.scss";		      | Se importa el archivo foo.scss    |
       | @import "foo";		            | Se importa el archivo foo.scss    |
-      | @import "foo.css";		            | Se importa el archivo foo.css     |
+      | @import "foo.css";		      | Se importa el archivo foo.css     |
       | @import "http://foo.com/bar";	| Se importa http://foo.com/bar     |
-      | @import url(foo);		            | Se importa lo que hay en la url   |
+      | @import url(foo);		      | Se importa lo que hay en la url   |
 
 
 También es posible importar varios archivos con una sola regla @import. Ejemplo:
