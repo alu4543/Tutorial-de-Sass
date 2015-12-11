@@ -86,7 +86,8 @@ Además, disponemos de una utilidad para la línea de comandos que te permite co
 ### 6. Variables
 las variables puede almacenar cosas como colores ,fuente o cualquier valor CSS que querremos ruetilizar a lo largo de la hoja de estilo.
 Sass usa el símbolo $ para las variables, a continuación un ejemplo :
-#### 6.1 Ejemplo
+- Ejemplo:
+
 
       $fuente:    Helvetica, sans-serif
       $rojo: #FF0000
@@ -110,8 +111,8 @@ Notamos que al escribir HTML tiene una jerarquía anidada visual y clara . CSS, 
 Sass le permitirá a CSS que siga la misma jerarquía visual de su HTML.
 #### 8.2 Advertencia
 En general se considera una mala práctica crear reglas excesivamente anidadas, podría resultar difícil de mantener, con esto en mente, a continuación un ejemplo :
+- Ejemplo:
 
-##### 8.2.2 Ejemplo
 
       nav
          ul
@@ -162,8 +163,8 @@ El único inconveniente es que cada vez que se utilice @import en CSS crea otra 
 Sass construye en la parte superior de la CSS actual @import pero en lugar de construir una solicitud HTTP, Sass tomará el archivo que desea importar y combinarlo con el archivo que está importando para que pueda servir a un solo archivo CSS para el navegador web.
 
 Supongamos que tenemos un par de archivos Sass , _reset.scss , base.scss. y Queremos importar _reset.scss hacia base.scss.
- 
-#### 10.1 Ejemplo
+- Ejemplo
+
 
     // _reset.sass
     html,
@@ -229,7 +230,8 @@ Un mixin permite hacer grupos de declaraciones CSS que puedo ruetilizar un todo 
 Para crear un mixin utiliza la directiva  @mixin y darle un nombre. 
 Después de crear nuestro mixin podemos utilizarlo como una declaración CSS comenzando con @include seguido del nombre del mixin.
 Un buen uso de un mixin es para prefijos de proveedores.
-Veamos un ejemplo:
+- Veamos un ejemplo:
+
 
     @mixin border-radius($radius) {
       -webkit-border-radius: $radius;
@@ -252,7 +254,8 @@ Cuando se genera el CSS que va a tener este aspecto
 #### 11.3 Argumentos
 Los argumentos de los mixins pueden estar formados por cualquier expresión Sass. Estos argumentos están disponibles en el interior del mixin en forma de variables.
 Cuando se define un mixin, los argumentos se definen como una serie de variables separadas por comas, y todo ello encerrado entre paréntesis. Después, cuando se utiliza un mixin deben pasarse los valores de los argumentos en ese mismo orden.
-Otro Ejemplo:
+- Otro Ejemplo:
+
 
       @mixin mi-border($color, $width) {
         border: {
@@ -271,7 +274,9 @@ El código Sass anterior se compila de la siguiente manera:
         border-style: dashed;
       }
 ##### 11.3.1 Argumentos con Valores por defecto
-Los mixins también pueden especificar valores por defecto para sus argumentos. De esta manera, si al llamar a un mixin no se pasa el valor de ese argumento, se utiliza en su lugar el valor por defecto. Ejemplo:
+Los mixins también pueden especificar valores por defecto para sus argumentos. De esta manera, si al llamar a un mixin no se pasa el valor de ese argumento, se utiliza en su lugar el valor por defecto. 
+- Ejemplo:
+
 
       @mixin mi-border($color, $width: 1in) {
         border: {
@@ -282,7 +287,10 @@ Los mixins también pueden especificar valores por defecto para sus argumentos. 
       }
       p { @include mi-border(blue); }
       h1 { @include mi-border(blue, 2in); }
+      
 El código Sass anterior se compila de la siguiente manera:
+- CSS Generad
+
 
       p {
         border-color: blue;
@@ -300,6 +308,8 @@ El código Sass anterior se compila de la siguiente manera:
 Esta es una de las características más útiles de Sass . 
 Usando extend le permite compartir un conjunto de propiedades CSS de un selector a otro .
 En nuestro ejemplo vamos a crear una simple serie de message de errores, advertencias y éxitos.
+- Ejemplo:
+
 
     .message
       border: 1px solid #ccc
@@ -320,6 +330,9 @@ En nuestro ejemplo vamos a crear una simple serie de message de errores, adverte
 
 El código anterior permitir Extender/Heredar las propiedades CSS en .Message y aplicarlos a .success , .Error , y .warning.
 La magia sucede con el CSS generado, esto ayuda a evitar tener que escribir varios nombres de clase en los elementos HTML . Esto es lo que parece:
+
+- CSS Generado:
+
 
     .message, .success, .error, .warning {
       border: 1px solid #cccccc;
@@ -343,8 +356,8 @@ La magia sucede con el CSS generado, esto ayuda a evitar tener que escribir vari
 ### 13. Operadores
 Utilizar las matemáticas en CSS puede resultar muy útil. Sass tiene algunos operadores matemáticos estándar como +, - , *, / y% .
 En nuestro ejemplo vamos a hacer un poco de matemática simple para calcular anchos para un lado y artículo.
+- Ejemplo
 
-#### 13.1 Ejemplo
 
     .container
       width: 100%
@@ -360,7 +373,8 @@ En nuestro ejemplo vamos a hacer un poco de matemática simple para calcular anc
 Hemos creado un grid simple , basado en 960px .
 Las operaciones en Sass nos deja hacer algo así como los valores de píxel y las convierten a porcentajes sin mucha molestia .
 
-#### 13.2 CSS Generado:
+- CSS Generado:
+
 
     .container {
       width: 100%;
